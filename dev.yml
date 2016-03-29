@@ -1,0 +1,23 @@
+appName: EasylearnMobileService
+packService:
+  host: noteService
+  port: 8080
+userService:
+  host: userService
+  port: 8080
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: DEBUG
+  appenders:
+    - type: console
+    - type: file
+      threshold: DEBUG
+     # logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
+      currentLogFilename: ./log/application.log
+      archivedLogFilenamePattern: ./log/application-%d{yyyy-MM-dd}-%i.log.gz
+      archivedFileCount: 7
+      timeZone: UTC
+      maxFileSize: 10MB
