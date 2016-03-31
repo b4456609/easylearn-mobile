@@ -3,8 +3,9 @@ package ntou.bernie.easylearn.mobile.resource;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ntou.bernie.easylearn.pack.resource.PackResource;
-import ntou.bernie.easylearn.user.resource.UserResource;
+
+import ntou.bernie.easylearn.mobile.client.PackClient;
+import ntou.bernie.easylearn.mobile.client.UserClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,8 +13,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.container.ResourceContext;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -26,22 +25,26 @@ import java.io.IOException;
 @Consumes(MediaType.APPLICATION_JSON)
 public class MobileResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(MobileResource.class);
-    @Context
-    private ResourceContext rc;
+    private final PackClient packClient;
+    private final UserClient userClient;
+    
+    public MobileResource(PackClient packClient, UserClient userClient) {
+		super();
+		this.packClient = packClient;
+		this.userClient = userClient;
+	}
 
-    @POST
+	@POST
     public Response sync(String syncJson) {
         ObjectMapper objectMapper = new ObjectMapper();
         LOGGER.debug("sync Json content " + syncJson);
 
         //sync user
-        UserResource userResource = rc.getResource(UserResource.class);
-        Response userResp = userResource.syncUser(syncJson);
+        Response userResp = userClient.syncUser(syncJson);
         LOGGER.debug("Finish user sync " + userResp.toString());
 
         //sync pack
-        PackResource packResource = rc.getResource(PackResource.class);
-        Response packResp = packResource.syncPacks(syncJson);
+        Response packResp = packClient.syncPacks(syncJson);
         LOGGER.debug("Finish pack sync " + packResp.toString());
 
         //if sync not ok return server error
@@ -55,7 +58,7 @@ public class MobileResource {
         try {
             ObjectNode respNode = (ObjectNode) objectMapper.readTree(userJson);
             String userId = respNode.get("user").get("id").textValue();
-            Response packsResp = packResource.getUserPacks(userId);
+            Response packsResp = packClient.getUserPacks(userId);
             JsonNode packsNode = objectMapper.readTree((String) packsResp.getEntity());
 
             for (final JsonNode pack : packsNode) {

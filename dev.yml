@@ -1,10 +1,6 @@
 appName: EasylearnMobileService
-packService:
-  host: noteService
-  port: 8080
-userService:
-  host: userService
-  port: 8080
+packServiceHost: noteService:8080
+userServiceHost: userService:8080
 
 # Logging settings.
 logging:

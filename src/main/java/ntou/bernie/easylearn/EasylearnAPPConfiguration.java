@@ -15,23 +15,11 @@ public class EasylearnAPPConfiguration extends Configuration {
     private String appName;
     @Valid
     @NotNull
-    private DatabaseConfiguration databaseConfiguration;
+    private String packServiceHost;
+    @Valid
+    @NotNull
+    private String userServiceHost;
 
-    /**
-     * @return the databaseConfiguration
-     */
-    @JsonProperty("mongoDB")
-    public DatabaseConfiguration getDatabaseConfiguration() {
-        return databaseConfiguration;
-    }
-
-    /**
-     * @param databaseConfiguration the databaseConfiguration to set
-     */
-    @JsonProperty("mongoDB")
-    public void setDatabaseConfiguration(DatabaseConfiguration databaseConfiguration) {
-        this.databaseConfiguration = databaseConfiguration;
-    }
 
     /**
      * @return the appName
@@ -49,5 +37,24 @@ public class EasylearnAPPConfiguration extends Configuration {
         this.appName = appName;
     }
 
+    @JsonProperty
+	public String getPackServiceHost() {
+		return packServiceHost;
+	}
+
+    @JsonProperty
+	public void setPackServiceHost(String packServiceHost) {
+		this.packServiceHost = packServiceHost;
+	}
+
+    @JsonProperty
+	public String getUserServiceHost() {
+		return userServiceHost;
+	}
+
+    @JsonProperty
+	public void setUserServiceHost(String userServiceHost) {
+		this.userServiceHost = userServiceHost;
+	}
 
 }
