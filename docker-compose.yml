@@ -5,6 +5,3 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
-    external_links:
-      - easylearn-note-service:noteService
-      - easylearn-user-service:userService

@@ -54,8 +54,8 @@ public class EasylearnMobileAPP extends Application<EasylearnAPPConfiguration> {
         final Client client = new JerseyClientBuilder().build();
         final Client client1 = new JerseyClientBuilder().build();
 
-        PackClient packClient = new PackClient(client, configuration.getPackServiceHost());
-        UserClient userClient = new UserClient(client1, configuration.getUserServiceHost());
+        PackClient packClient = new PackClient(client, configuration.getServiceHost());
+        UserClient userClient = new UserClient(client1, configuration.getServiceHost());
 
        MobileResource mobileResource = new MobileResource(packClient, userClient);
         environment.jersey().register(mobileResource);

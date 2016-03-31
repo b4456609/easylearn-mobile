@@ -36,34 +36,35 @@ public class MobileResource {
 
 	@POST
     public Response sync(String syncJson) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        LOGGER.debug("sync Json content " + syncJson);
-
-        //sync user
-        Response userResp = userClient.syncUser(syncJson);
-        LOGGER.debug("Finish user sync " + userResp.toString());
-
-        //sync pack
-        Response packResp = packClient.syncPacks(syncJson);
-        LOGGER.debug("Finish pack sync " + packResp.toString());
-
-        //if sync not ok return server error
-        if (userResp.getStatus() != 200 || packResp.getStatus() != 200)
-            return Response.serverError().build();
-
-        //get response user json node
-        String userJson = (String) userResp.getEntity();
-        LOGGER.debug(userJson);
-
         try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            LOGGER.debug("sync Json content " + syncJson);
+
+            //sync user
+            Response userResp = userClient.syncUser(syncJson);
+            LOGGER.debug("Finish user sync " + userResp.toString());
+
+            //sync pack
+            JsonNode jsonNode = objectMapper.readTree(syncJson);
+            String packsjson = jsonNode.get("pack").toString();
+            LOGGER.debug(packsjson);
+            Response packResp = packClient.syncPacks(packsjson);
+            LOGGER.debug("Finish pack sync " + packResp.toString());
+
+            //if sync not ok return server error
+            if (userResp.getStatus() != 200 || packResp.getStatus() != 200)
+                return Response.serverError().build();
+
+            //get response user json node
+            String userJson = userResp.readEntity(String.class);
+            LOGGER.debug(userJson);
+
             ObjectNode respNode = (ObjectNode) objectMapper.readTree(userJson);
             String userId = respNode.get("user").get("id").textValue();
             Response packsResp = packClient.getUserPacks(userId);
-            JsonNode packsNode = objectMapper.readTree((String) packsResp.getEntity());
+            JsonNode packsNode = objectMapper.readTree(packsResp.readEntity(String.class));
 
-            for (final JsonNode pack : packsNode) {
-                respNode.set(pack.get("id").asText(), pack);
-            }
+            respNode.set("pack", packsNode);
 
             LOGGER.debug(respNode.toString());
 
