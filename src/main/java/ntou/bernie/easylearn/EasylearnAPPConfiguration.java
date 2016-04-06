@@ -15,7 +15,10 @@ public class EasylearnAPPConfiguration extends Configuration {
     private String appName;
     @Valid
     @NotNull
-    private String serviceHost;
+    private String userServiceHost;
+    @Valid
+    @NotNull
+    private String packServiceHost;
 
 
     /**
@@ -35,13 +38,20 @@ public class EasylearnAPPConfiguration extends Configuration {
     }
 
     @JsonProperty
-	public String getServiceHost() {
-		return serviceHost;
+	public String getUserServiceHost() {
+		return userServiceHost;
 	}
 
     @JsonProperty
-	public void setServiceHost(String serviceHost) {
-		this.serviceHost = serviceHost;
+	public void setUserServiceHost(String userServiceHost) {
+		this.userServiceHost = userServiceHost;
 	}
 
+    public String getPackServiceHost() {
+        return packServiceHost;
+    }
+
+    public void setPackServiceHost(String packServiceHost) {
+        this.packServiceHost = packServiceHost;
+    }
 }

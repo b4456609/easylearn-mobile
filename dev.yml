@@ -1,5 +1,6 @@
 appName: EasylearnMobileService
-serviceHost: http://192.168.5.100/
+packServiceHost: http://192.168.5.100:8082/
+userServiceHost: http://192.168.5.100:8084/
 
 # Logging settings.
 logging:
