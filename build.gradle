@@ -41,6 +41,9 @@ shadowJar {
     mergeServiceFiles()
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
 
 run {
     args 'server', configPath + 'dev.yml'
