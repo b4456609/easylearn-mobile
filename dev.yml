@@ -17,3 +17,9 @@ logging:
       archivedFileCount: 7
       timeZone: UTC
       maxFileSize: 10MB
+metrics:
+  reporters:
+    - type: graphite
+      host: 140.121.101.161
+      port: 2003
+      prefix: test-easylearn-mobile
