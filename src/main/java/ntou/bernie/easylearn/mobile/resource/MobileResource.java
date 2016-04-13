@@ -1,5 +1,8 @@
 package ntou.bernie.easylearn.mobile.resource;
 
+import com.codahale.metrics.annotation.ExceptionMetered;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -35,6 +38,8 @@ public class MobileResource {
 	}
 
 	@POST
+    @Timed
+    @ExceptionMetered
     public Response sync(String syncJson) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
