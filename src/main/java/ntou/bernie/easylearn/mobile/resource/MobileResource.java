@@ -47,14 +47,14 @@ public class MobileResource {
 
             //sync user
             Response userResp = userClient.syncUser(syncJson);
-            LOGGER.debug("Finish user sync " + userResp.toString());
+            LOGGER.info("Finish user sync " + userResp.toString());
 
             //sync pack
             JsonNode jsonNode = objectMapper.readTree(syncJson);
             String packsjson = jsonNode.get("pack").toString();
             LOGGER.debug(packsjson);
             Response packResp = packClient.syncPacks(packsjson);
-            LOGGER.debug("Finish pack sync " + packResp.toString());
+            LOGGER.info("Finish pack sync " + packResp.toString());
 
             //if sync not ok return server error
             if (userResp.getStatus() != 200 || packResp.getStatus() != 200)
@@ -62,7 +62,7 @@ public class MobileResource {
 
             //get response user json node
             String userJson = userResp.readEntity(String.class);
-            LOGGER.debug(userJson);
+            LOGGER.info(userJson);
 
             ObjectNode respNode = (ObjectNode) objectMapper.readTree(userJson);
             String userId = respNode.get("user").get("id").textValue();
@@ -71,7 +71,7 @@ public class MobileResource {
 
             respNode.set("pack", packsNode);
 
-            LOGGER.debug(respNode.toString());
+            LOGGER.info(respNode.toString());
 
             return Response.ok(respNode.toString()).build();
 
