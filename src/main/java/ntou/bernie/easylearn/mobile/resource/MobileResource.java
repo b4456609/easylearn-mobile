@@ -3,7 +3,6 @@ package ntou.bernie.easylearn.mobile.resource;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import ntou.bernie.easylearn.mobile.client.PackClient;
 import ntou.bernie.easylearn.mobile.client.UserClient;
 import org.slf4j.Logger;
@@ -27,14 +26,14 @@ public class MobileResource {
     private static final Logger LOGGER = LoggerFactory.getLogger(MobileResource.class);
     private final PackClient packClient;
     private final UserClient userClient;
-    
-    public MobileResource(PackClient packClient, UserClient userClient) {
-		super();
-		this.packClient = packClient;
-		this.userClient = userClient;
-	}
 
-	@POST
+    public MobileResource(PackClient packClient, UserClient userClient) {
+        super();
+        this.packClient = packClient;
+        this.userClient = userClient;
+    }
+
+    @POST
     public Response sync(String syncJson) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();

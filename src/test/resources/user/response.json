@@ -1,12 +1,19 @@
 {
   "user": {
     "id": "1009840175700426",
-    "name": "范振原"
+    "name": "遊客"
+  },
+  "setting": {
+    "wifi_sync": true,
+    "mobile_network_sync": true,
+    "version": 26,
+    "modified": false,
+    "last_sync_time": 1455851572000
   },
   "folder": [
     {
-      "name": "全部的懶人包",
       "id": "allfolder",
+      "name": "全部的懶人包",
       "pack": [
         "pack1439355907459",
         "pack1439367500493",

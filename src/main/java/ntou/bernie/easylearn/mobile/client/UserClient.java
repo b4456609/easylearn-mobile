@@ -16,8 +16,8 @@ public class UserClient {
         this.client = client;
         this.hostname = hostname;
     }
-    
-    public Response syncUser(String json){
- 		return client.target(hostname).path("user/sync").request().post(Entity.entity(json, MediaType.APPLICATION_JSON));
-     }
+
+    public Response syncUser(String json) {
+        return client.target(hostname).path("user/sync").request().accept(MediaType.APPLICATION_JSON_TYPE).post(Entity.entity(json, MediaType.APPLICATION_JSON));
+    }
 }

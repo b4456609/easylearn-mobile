@@ -1,0 +1,79 @@
+{
+    "provider": {
+        "name": "easylearn-user"
+    },
+    "consumer": {
+        "name": "easylearn-mobile"
+    },
+    "interactions": [
+        {
+            "providerState": null,
+            "description": "a request for user",
+            "request": {
+                "method": "POST",
+                "path": "/user/sync",
+                "headers": {
+                    "Connection": "keep-alive",
+                    "User-Agent": "Jersey",
+                    "Host": "\u195e\uf180",
+                    "Accept": "application/json",
+                    "Content-Length": "",
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "folder": [
+                        {
+                            "id": "allfolder",
+                            "name": "\u5168\u90e8\u7684\u61f6\u4eba\u5305",
+                            "pack": [
+                                "pack1439355907459",
+                                "pack1439367500493",
+                                "pack1439370245981",
+                                "pack1439372921598",
+                                "pack1439381800612",
+                                "pack1439385129482",
+                                "pack1439394796784",
+                                "pack1439451391246",
+                                "pack1439471856230"
+                            ]
+                        }
+                    ],
+                    "setting": {
+                        "last_sync_time": 1455851572000,
+                        "mobile_network_sync": true,
+                        "modified": false,
+                        "version": 26,
+                        "wifi_sync": true
+                    },
+                    "user": {
+                        "id": "1009840175700426",
+                        "name": "\u904a\u5ba2"
+                    }
+                },
+                "matchingRules": {
+                    "$.headers.Content-Length": {
+                        "regex": ".*"
+                    },
+                    "$.headers.User-Agent": {
+                        "regex": "Jersey.*"
+                    },
+                    "$.headers.Host": {
+                        "regex": ".*"
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "body": "{\n  \"user\": {\n    \"id\": \"1009840175700426\",\n    \"name\": \"\u904a\u5ba2\"\n  },\n  \"setting\": {\n    \"wifi_sync\": true,\n    \"mobile_network_sync\": true,\n    \"version\": 26,\n    \"modified\": false,\n    \"last_sync_time\": 1455851572000\n  },\n  \"folder\": [\n    {\n      \"id\": \"allfolder\",\n      \"name\": \"\u5168\u90e8\u7684\u61f6\u4eba\u5305\",\n      \"pack\": [\n        \"pack1439355907459\",\n        \"pack1439367500493\",\n        \"pack1439370245981\",\n        \"pack1439372921598\",\n        \"pack1439381800612\",\n        \"pack1439385129482\",\n        \"pack1439394796784\",\n        \"pack1439451391246\",\n        \"pack1439471856230\"\n      ]\n    }\n  ]\n}"
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "2.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.2.7"
+        }
+    }
+}

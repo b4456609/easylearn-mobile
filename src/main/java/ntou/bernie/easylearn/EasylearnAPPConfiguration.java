@@ -38,14 +38,14 @@ public class EasylearnAPPConfiguration extends Configuration {
     }
 
     @JsonProperty
-	public String getUserServiceHost() {
-		return userServiceHost;
-	}
+    public String getUserServiceHost() {
+        return userServiceHost;
+    }
 
     @JsonProperty
-	public void setUserServiceHost(String userServiceHost) {
-		this.userServiceHost = userServiceHost;
-	}
+    public void setUserServiceHost(String userServiceHost) {
+        this.userServiceHost = userServiceHost;
+    }
 
     public String getPackServiceHost() {
         return packServiceHost;

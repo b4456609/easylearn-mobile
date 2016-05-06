@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.ws.rs.client.Client;
-
 import java.util.EnumSet;
 
 /**
@@ -50,14 +49,14 @@ public class EasylearnMobileAPP extends Application<EasylearnAPPConfiguration> {
 
         // Add URL mapping
         cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "/*");
-        
+
         final Client client = new JerseyClientBuilder().build();
         final Client client1 = new JerseyClientBuilder().build();
 
         PackClient packClient = new PackClient(client, configuration.getPackServiceHost());
         UserClient userClient = new UserClient(client1, configuration.getUserServiceHost());
 
-       MobileResource mobileResource = new MobileResource(packClient, userClient);
+        MobileResource mobileResource = new MobileResource(packClient, userClient);
         environment.jersey().register(mobileResource);
     }
 

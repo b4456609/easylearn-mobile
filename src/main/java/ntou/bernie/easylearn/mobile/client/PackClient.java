@@ -16,13 +16,13 @@ public class PackClient {
         this.client = client;
         this.hostname = hostname;
     }
-    
-    public Response syncPacks(String json){
-		return client.target(hostname).path("pack/sync").request().post(Entity.entity(json, MediaType.APPLICATION_JSON));
+
+    public Response syncPacks(String json) {
+        return client.target(hostname).path("pack/sync").request().post(Entity.entity(json, MediaType.APPLICATION_JSON));
     }
 
-	public Response getUserPacks(String userId) {
-		return client.target(hostname).path("pack/user/").path(userId).request().get();
-	}
+    public Response getUserPacks(String userId) {
+        return client.target(hostname).path("pack/user/").path(userId).request().get();
+    }
 
 }
