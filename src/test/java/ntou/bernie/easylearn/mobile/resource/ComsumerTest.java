@@ -27,6 +27,10 @@ public class ComsumerTest extends ConsumerPactTest {
         headers.put("Accept", "application/json");
         headers.put("Content-Type", "application/json");
 
+
+        Map<String, String> resheaders = new HashMap<String, String>();
+        headers.put("Content-Type", "application/json");
+
         return builder.uponReceiving("a request for user")
                 .path("/user/sync")
                 .method("POST")
@@ -36,7 +40,7 @@ public class ComsumerTest extends ConsumerPactTest {
                 .matchHeader("User-Agent", ".*")
                 .matchHeader("Content-Length", ".*")
                 .willRespondWith()
-                .status(200)
+                .status(200).headers(resheaders)
                 .body(sendBody).toFragment();
     }
 

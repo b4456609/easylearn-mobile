@@ -15,9 +15,9 @@
                 "headers": {
                     "Connection": "keep-alive",
                     "User-Agent": "",
-                    "Host": "\u5ce4\uc380",
+                    "Host": "",
                     "Accept": "application/json",
-                    "Content-Length": "\u7a1b",
+                    "Content-Length": "",
                     "Content-Type": "application/json"
                 },
                 "body": {
@@ -42,78 +42,6 @@
                             "name": "\u5168\u90e8\u7684\u61f6\u4eba\u5305",
                             "pack": [
                                 "pack1460470104891"
-                            ]
-                        }
-                    ],
-                    "pack": [
-                        {
-                            "cover_filename": "",
-                            "create_time": 1460470093836,
-                            "creator_user_id": "100000233589366",
-                            "creator_user_name": "\u904a\u5ba2",
-                            "description": "",
-                            "id": "pack1460470093831",
-                            "is_public": true,
-                            "name": "fwefawea",
-                            "tags": "",
-                            "version": [
-                                {
-                                    "bookmark": [
-                                        
-                                    ],
-                                    "content": "<p>wefawefawef</p>",
-                                    "create_time": 1460470093836,
-                                    "creator_user_id": "100000233589366",
-                                    "creator_user_name": "\u904a\u5ba2",
-                                    "file": [
-                                        
-                                    ],
-                                    "id": "version1460470093836",
-                                    "is_public": true,
-                                    "modified": "false",
-                                    "note": [
-                                        
-                                    ],
-                                    "private_id": "",
-                                    "user_view_count": 0,
-                                    "version": 0,
-                                    "view_count": 0
-                                }
-                            ]
-                        },
-                        {
-                            "cover_filename": "",
-                            "create_time": 1460470104894,
-                            "creator_user_id": "100000233589366",
-                            "creator_user_name": "\u904a\u5ba2",
-                            "description": "",
-                            "id": "pack1460470104891",
-                            "is_public": true,
-                            "name": "fjaewfpoawef",
-                            "tags": "",
-                            "version": [
-                                {
-                                    "bookmark": [
-                                        
-                                    ],
-                                    "content": "<p>afwefawef</p>",
-                                    "create_time": 1460470104894,
-                                    "creator_user_id": "100000233589366",
-                                    "creator_user_name": "\u904a\u5ba2",
-                                    "file": [
-                                        
-                                    ],
-                                    "id": "version1460470104894",
-                                    "is_public": true,
-                                    "modified": "false",
-                                    "note": [
-                                        
-                                    ],
-                                    "private_id": "",
-                                    "user_view_count": 0,
-                                    "version": 0,
-                                    "view_count": 0
-                                }
                             ]
                         }
                     ],
@@ -143,7 +71,7 @@
             },
             "response": {
                 "status": 200,
-                "body": "{\"user\":{\"id\":\"100000233589366\",\"name\":\"\u904a\u5ba2\"},\"setting\":{\"wifi_sync\":true,\"mobile_network_sync\":true,\"version\":1,\"modified\":false,\"last_sync_time\":1419519614000},\"folder\":[{\"id\":\"allPackId\",\"name\":\"All\",\"pack\":[\"pack1460470093831\",\"pack1460470104891\"]},{\"id\":\"fjoeiwjowfe\",\"name\":\"\u6211\u7684\u6700\u611b\",\"pack\":[\"pack1460470093831\"]},{\"id\":\"allfolder\",\"name\":\"\u5168\u90e8\u7684\u61f6\u4eba\u5305\",\"pack\":[\"pack1460470104891\"]}],\"pack\":[{\"name\":\"fwefawea\",\"id\":\"pack1460470093831\",\"description\":\"\",\"create_time\":1460470093836,\"tags\":\"\",\"is_public\":true,\"creator_user_id\":\"100000233589366\",\"creator_user_name\":\"\u904a\u5ba2\",\"cover_filename\":\"\",\"version\":[{\"id\":\"version1460470093836\",\"content\":\"<p>wefawefawef</p>\",\"create_time\":1460470093836,\"creator_user_id\":\"100000233589366\",\"creator_user_name\":\"\u904a\u5ba2\",\"version\":0,\"view_count\":0,\"user_view_count\":0,\"private_id\":\"\",\"modified\":\"false\",\"file\":[],\"note\":[],\"is_public\":true,\"bookmark\":[]}]},{\"name\":\"fjaewfpoawef\",\"id\":\"pack1460470104891\",\"description\":\"\",\"create_time\":1460470104894,\"tags\":\"\",\"is_public\":true,\"creator_user_id\":\"100000233589366\",\"creator_user_name\":\"\u904a\u5ba2\",\"cover_filename\":\"\",\"version\":[{\"id\":\"version1460470104894\",\"content\":\"<p>afwefawef</p>\",\"create_time\":1460470104894,\"creator_user_id\":\"100000233589366\",\"creator_user_name\":\"\u904a\u5ba2\",\"version\":0,\"view_count\":0,\"user_view_count\":0,\"private_id\":\"\",\"modified\":\"false\",\"file\":[],\"note\":[],\"is_public\":true,\"bookmark\":[]}]}]}"
+                "body": "{\n  \"user\": {\n    \"id\": \"100000233589366\",\n    \"name\": \"\u904a\u5ba2\"\n  },\n  \"setting\": {\n    \"wifi_sync\": true,\n    \"mobile_network_sync\": true,\n    \"version\": 1,\n    \"modified\": false,\n    \"last_sync_time\": 1419519614000\n  },\n  \"folder\": [\n    {\n      \"id\": \"allPackId\",\n      \"name\": \"All\",\n      \"pack\": [\n        \"pack1460470093831\",\n        \"pack1460470104891\"\n      ]\n    },\n    {\n      \"id\": \"fjoeiwjowfe\",\n      \"name\": \"\u6211\u7684\u6700\u611b\",\n      \"pack\": [\n        \"pack1460470093831\"\n      ]\n    },\n    {\n      \"id\": \"allfolder\",\n      \"name\": \"\u5168\u90e8\u7684\u61f6\u4eba\u5305\",\n      \"pack\": [\n        \"pack1460470104891\"\n      ]\n    }\n  ]\n}"
             }
         }
     ],

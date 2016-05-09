@@ -1,1 +1,37 @@
-{"user":{"id":"100000233589366","name":"遊客"},"setting":{"wifi_sync":true,"mobile_network_sync":true,"version":1,"modified":false,"last_sync_time":1419519614000},"folder":[{"id":"allPackId","name":"All","pack":["pack1460470093831","pack1460470104891"]},{"id":"fjoeiwjowfe","name":"我的最愛","pack":["pack1460470093831"]},{"id":"allfolder","name":"全部的懶人包","pack":["pack1460470104891"]}],"pack":[{"name":"fwefawea","id":"pack1460470093831","description":"","create_time":1460470093836,"tags":"","is_public":true,"creator_user_id":"100000233589366","creator_user_name":"遊客","cover_filename":"","version":[{"id":"version1460470093836","content":"<p>wefawefawef</p>","create_time":1460470093836,"creator_user_id":"100000233589366","creator_user_name":"遊客","version":0,"view_count":0,"user_view_count":0,"private_id":"","modified":"false","file":[],"note":[],"is_public":true,"bookmark":[]}]},{"name":"fjaewfpoawef","id":"pack1460470104891","description":"","create_time":1460470104894,"tags":"","is_public":true,"creator_user_id":"100000233589366","creator_user_name":"遊客","cover_filename":"","version":[{"id":"version1460470104894","content":"<p>afwefawef</p>","create_time":1460470104894,"creator_user_id":"100000233589366","creator_user_name":"遊客","version":0,"view_count":0,"user_view_count":0,"private_id":"","modified":"false","file":[],"note":[],"is_public":true,"bookmark":[]}]}]}
+{
+  "user": {
+    "id": "100000233589366",
+    "name": "遊客"
+  },
+  "setting": {
+    "wifi_sync": true,
+    "mobile_network_sync": true,
+    "version": 1,
+    "modified": false,
+    "last_sync_time": 1419519614000
+  },
+  "folder": [
+    {
+      "id": "allPackId",
+      "name": "All",
+      "pack": [
+        "pack1460470093831",
+        "pack1460470104891"
+      ]
+    },
+    {
+      "id": "fjoeiwjowfe",
+      "name": "我的最愛",
+      "pack": [
+        "pack1460470093831"
+      ]
+    },
+    {
+      "id": "allfolder",
+      "name": "全部的懶人包",
+      "pack": [
+        "pack1460470104891"
+      ]
+    }
+  ]
+}
