@@ -1,9 +1,9 @@
 {
     "provider": {
-        "name": "easylearn-user"
+        "name": "easylearnUser"
     },
     "consumer": {
-        "name": "easylearn-mobile"
+        "name": "easylearnMobile"
     },
     "interactions": [
         {
