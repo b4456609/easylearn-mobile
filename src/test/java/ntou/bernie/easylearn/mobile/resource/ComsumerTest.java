@@ -19,7 +19,6 @@ import static io.dropwizard.testing.FixtureHelpers.fixture;
 public class ComsumerTest extends ConsumerPactTest {
 
     private String sendBody = fixture("user/user.json");
-    private String responseBody = fixture("user/response.json");
 
     @Override
     protected PactFragment createFragment(PactDslWithProvider builder) {
@@ -34,11 +33,11 @@ public class ComsumerTest extends ConsumerPactTest {
                 .body(sendBody)
                 .headers(headers)
                 .matchHeader("Host", ".*")
-                .matchHeader("User-Agent", "Jersey.*")
+                .matchHeader("User-Agent", ".*")
                 .matchHeader("Content-Length", ".*")
                 .willRespondWith()
                 .status(200)
-                .body(responseBody).toFragment();
+                .body(sendBody).toFragment();
     }
 
     @Override
@@ -54,6 +53,6 @@ public class ComsumerTest extends ConsumerPactTest {
     @Override
     protected void runTest(String url) throws IOException {
         UserClient userClient = new UserClient(new JerseyClientBuilder().build(), url);
-        Assert.assertEquals(userClient.syncUser(sendBody).readEntity(String.class), responseBody);
+        Assert.assertEquals(userClient.syncUser(sendBody).readEntity(String.class), sendBody);
     }
 }
