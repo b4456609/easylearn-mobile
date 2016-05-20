@@ -11,7 +11,7 @@ public class ConsulClientTest {
     @Test
     public void getServiceHost() throws Exception {
         ConsulClient consulClient = new ConsulClient();
-        consulClient.getServiceHost();
+        consulClient.getServiceHost("testHost");
         assertEquals("140.121.101.162", consulClient.getHost());
     }
 
