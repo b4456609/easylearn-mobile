@@ -10,48 +10,40 @@ import javax.validation.constraints.NotNull;
  * @author bernie Get Configuration from file
  */
 public class EasylearnAPPConfiguration extends Configuration {
+
     @Valid
     @NotNull
-    private String appName;
+    private String host;
     @Valid
     @NotNull
-    private String userServiceHost;
+    private String packServicePort;
     @Valid
     @NotNull
-    private String packServiceHost;
+    private String userServicePort;
 
-
-    /**
-     * @return the appName
-     */
-    @JsonProperty
-    public String getAppName() {
-        return appName;
+    public String getHost() {
+        return host;
     }
 
-    /**
-     * @param appName the appName to set
-     */
-    @JsonProperty
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setHost(String host) {
+        this.host = host;
     }
 
     @JsonProperty
-    public String getUserServiceHost() {
-        return userServiceHost;
+    public String getPackServicePort() {
+        return packServicePort;
     }
 
     @JsonProperty
-    public void setUserServiceHost(String userServiceHost) {
-        this.userServiceHost = userServiceHost;
+    public void setPackServicePort(String packServicePort) {
+        this.packServicePort = packServicePort;
     }
 
-    public String getPackServiceHost() {
-        return packServiceHost;
+    public String getUserServicePort() {
+        return userServicePort;
     }
 
-    public void setPackServiceHost(String packServiceHost) {
-        this.packServiceHost = packServiceHost;
+    public void setUserServicePort(String userServicePort) {
+        this.userServicePort = userServicePort;
     }
 }

@@ -14,10 +14,10 @@
                 "path": "/user/sync",
                 "headers": {
                     "Connection": "keep-alive",
-                    "User-Agent": "",
-                    "Host": "",
+                    "User-Agent": "Jersey/2.22.1",
+                    "Host": "localhost:34545",
                     "Accept": "application/json",
-                    "Content-Length": "",
+                    "Content-Length": "628",
                     "Content-Type": "application/json"
                 },
                 "body": {

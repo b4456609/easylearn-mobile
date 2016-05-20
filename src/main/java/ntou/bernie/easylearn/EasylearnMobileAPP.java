@@ -5,7 +5,9 @@ package ntou.bernie.easylearn;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import io.dropwizard.Application;
+import io.dropwizard.logging.SyslogAppenderFactory;
 import io.dropwizard.setup.Environment;
+import ntou.bernie.easylearn.mobile.client.ConsulClient;
 import ntou.bernie.easylearn.mobile.client.PackClient;
 import ntou.bernie.easylearn.mobile.client.UserClient;
 import ntou.bernie.easylearn.mobile.resource.MobileResource;
@@ -36,7 +38,6 @@ public class EasylearnMobileAPP extends Application<EasylearnAPPConfiguration> {
 
     @Override
     public void run(EasylearnAPPConfiguration configuration, Environment environment) throws Exception {
-        LOGGER.info("Application name: {}", configuration.getAppName());
         environment.getObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         final FilterRegistration.Dynamic cors =
@@ -53,8 +54,18 @@ public class EasylearnMobileAPP extends Application<EasylearnAPPConfiguration> {
         final Client client = new JerseyClientBuilder().build();
         final Client client1 = new JerseyClientBuilder().build();
 
-        PackClient packClient = new PackClient(client, configuration.getPackServiceHost());
-        UserClient userClient = new UserClient(client1, configuration.getUserServiceHost());
+        ConsulClient consulClient = new ConsulClient();
+        consulClient.getServiceHost(configuration.getHost());
+        String host = consulClient.getHost();
+        String packhost = "http://" + host + ":" + configuration.getUserServicePort() + "/";
+        String userhost = "http://" + host + ":" + configuration.getPackServicePort() + "/";
+
+        LOGGER.debug(host);
+        LOGGER.debug(packhost);
+        LOGGER.debug(userhost);
+
+        PackClient packClient = new PackClient(client, packhost);
+        UserClient userClient = new UserClient(client1, userhost);
 
         MobileResource mobileResource = new MobileResource(packClient, userClient);
         environment.jersey().register(mobileResource);

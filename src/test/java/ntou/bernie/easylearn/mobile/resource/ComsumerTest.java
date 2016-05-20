@@ -36,9 +36,9 @@ public class ComsumerTest extends ConsumerPactTest {
                 .method("POST")
                 .body(sendBody)
                 .headers(headers)
-                .matchHeader("Host", ".*")
-                .matchHeader("User-Agent", ".*")
-                .matchHeader("Content-Length", ".*")
+                .matchHeader("Host", ".*", "localhost:34545")
+                .matchHeader("User-Agent", ".*", "Jersey/2.22.1")
+                .matchHeader("Content-Length", ".*", "628")
                 .willRespondWith()
                 .status(200).headers(resheaders)
                 .body(sendBody).toFragment();
