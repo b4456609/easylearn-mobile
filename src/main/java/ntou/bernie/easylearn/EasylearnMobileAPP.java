@@ -57,8 +57,8 @@ public class EasylearnMobileAPP extends Application<EasylearnAPPConfiguration> {
         ConsulClient consulClient = new ConsulClient();
         consulClient.getServiceHost(configuration.getHost());
         String host = consulClient.getHost();
-        String packhost = "http://" + host + ":" + configuration.getUserServicePort() + "/";
-        String userhost = "http://" + host + ":" + configuration.getPackServicePort() + "/";
+        String userhost = "http://" + host + ":" + configuration.getUserServicePort() + "/";
+        String packhost = "http://" + host + ":" + configuration.getPackServicePort() + "/";
 
         LOGGER.debug(host);
         LOGGER.debug(packhost);
