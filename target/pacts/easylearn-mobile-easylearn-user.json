@@ -13,11 +13,6 @@
                 "method": "POST",
                 "path": "/user/sync",
                 "headers": {
-                    "Connection": "keep-alive",
-                    "User-Agent": "Jersey/2.22.1",
-                    "Host": "localhost:34545",
-                    "Accept": "application/json",
-                    "Content-Length": "628",
                     "Content-Type": "application/json"
                 },
                 "body": {
@@ -56,22 +51,50 @@
                         "id": "100000233589366",
                         "name": "\u904a\u5ba2"
                     }
-                },
-                "matchingRules": {
-                    "$.headers.Content-Length": {
-                        "regex": ".*"
-                    },
-                    "$.headers.User-Agent": {
-                        "regex": ".*"
-                    },
-                    "$.headers.Host": {
-                        "regex": ".*"
-                    }
                 }
             },
             "response": {
                 "status": 200,
-                "body": "{\n  \"user\": {\n    \"id\": \"100000233589366\",\n    \"name\": \"\u904a\u5ba2\"\n  },\n  \"setting\": {\n    \"wifi_sync\": true,\n    \"mobile_network_sync\": true,\n    \"version\": 1,\n    \"modified\": false,\n    \"last_sync_time\": 1419519614000\n  },\n  \"folder\": [\n    {\n      \"id\": \"allPackId\",\n      \"name\": \"All\",\n      \"pack\": [\n        \"pack1460470093831\",\n        \"pack1460470104891\"\n      ]\n    },\n    {\n      \"id\": \"fjoeiwjowfe\",\n      \"name\": \"\u6211\u7684\u6700\u611b\",\n      \"pack\": [\n        \"pack1460470093831\"\n      ]\n    },\n    {\n      \"id\": \"allfolder\",\n      \"name\": \"\u5168\u90e8\u7684\u61f6\u4eba\u5305\",\n      \"pack\": [\n        \"pack1460470104891\"\n      ]\n    }\n  ]\n}"
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "folder": [
+                        {
+                            "id": "allPackId",
+                            "name": "All",
+                            "pack": [
+                                "pack1460470093831",
+                                "pack1460470104891"
+                            ]
+                        },
+                        {
+                            "id": "fjoeiwjowfe",
+                            "name": "\u6211\u7684\u6700\u611b",
+                            "pack": [
+                                "pack1460470093831"
+                            ]
+                        },
+                        {
+                            "id": "allfolder",
+                            "name": "\u5168\u90e8\u7684\u61f6\u4eba\u5305",
+                            "pack": [
+                                "pack1460470104891"
+                            ]
+                        }
+                    ],
+                    "setting": {
+                        "last_sync_time": 1419519614000,
+                        "mobile_network_sync": true,
+                        "modified": false,
+                        "version": 1,
+                        "wifi_sync": true
+                    },
+                    "user": {
+                        "id": "100000233589366",
+                        "name": "\u904a\u5ba2"
+                    }
+                }
             }
         }
     ],

@@ -22,26 +22,13 @@ public class ComsumerTest extends ConsumerPactTest {
 
     @Override
     protected PactFragment createFragment(PactDslWithProvider builder) {
-        Map<String, String> headers = new HashMap<String, String>();
-        headers.put("Connection", "keep-alive");
-        headers.put("Accept", "application/json");
-        headers.put("Content-Type", "application/json");
-
-
-        Map<String, String> resheaders = new HashMap<String, String>();
-        headers.put("Content-Type", "application/json");
-
         return builder.uponReceiving("a request for user")
                 .path("/user/sync")
                 .method("POST")
-                .body(sendBody)
-                .headers(headers)
-                .matchHeader("Host", ".*", "localhost:34545")
-                .matchHeader("User-Agent", ".*", "Jersey/2.22.1")
-                .matchHeader("Content-Length", ".*", "628")
+                .body(sendBody, "application/json")
                 .willRespondWith()
-                .status(200).headers(resheaders)
-                .body(sendBody).toFragment();
+                .status(200)
+                .body(sendBody, "application/json").toFragment();
     }
 
     @Override
