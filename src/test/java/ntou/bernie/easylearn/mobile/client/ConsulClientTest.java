@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
  * Created by bernie on 2016/5/20.
  */
 public class ConsulClientTest {
-    @Test
+//    @Test
     public void getServiceHost() throws Exception {
         ConsulClient consulClient = new ConsulClient();
         consulClient.getServiceHost("testHost");
