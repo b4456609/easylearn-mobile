@@ -54,12 +54,15 @@ public class EasylearnMobileAPP extends Application<EasylearnAPPConfiguration> {
         final Client client = new JerseyClientBuilder().build();
         final Client client1 = new JerseyClientBuilder().build();
 
-        ConsulClient consulClient = new ConsulClient();
-        consulClient.getServiceHost(configuration.getHost());
-        String host = consulClient.getHost();
+//        ConsulClient consulClient = new ConsulClient();
+//        consulClient.getServiceHost(configuration.getHost());
+//        String host = consulClient.getHost();
+//        String userhost = "http://" + host + ":" + configuration.getUserServicePort() + "/";
+//        String packhost = "http://" + host + ":" + configuration.getPackServicePort() + "/";
+
+        String host = "140.121.101.163";
         String userhost = "http://" + host + ":" + configuration.getUserServicePort() + "/";
         String packhost = "http://" + host + ":" + configuration.getPackServicePort() + "/";
-
         LOGGER.debug(host);
         LOGGER.debug(packhost);
         LOGGER.debug(userhost);
